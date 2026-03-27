@@ -1,0 +1,7 @@
+1. Điều gì xảy ra khi người dùng chọn “Cancel”?
+Khi người dùng chọn “Cancel” hoặc đóng cửa sổ, hàm showConfirmDialog() trả về JOptionPane.CANCEL_OPTION hoặc JOptionPane.CLOSED_OPTION.
+Nếu chương trình chỉ kiểm tra “Yes/No” mà không xử lý hai trường hợp này, thì chúng sẽ bị xem như “No”, dẫn đến kết quả không chính xác. Vì vậy cần kiểm tra riêng để xử lý đúng logic.
+
+2. Làm thế nào để tùy chỉnh các lựa chọn (ví dụ: “I do”, “I don’t”)?
+Sử dụng JOptionPane.showOptionDialog() thay vì showConfirmDialog().
+Phương thức này cho phép lập trình viên tự định nghĩa nội dung các nút thông qua một mảng. Giá trị trả về là chỉ số (index) của nút được chọn, giúp xác định chính xác lựa chọn của người dùng.
