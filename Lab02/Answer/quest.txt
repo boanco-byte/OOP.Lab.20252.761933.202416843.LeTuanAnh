@@ -1,0 +1,1 @@
+Không được, Java cho phép tạo nhiều constructor nếu chúng khác danh sách tham số. Nếu chỉ khác tên tham số (title với category) nhưng cùng kiểu String thì không hợp lệ
