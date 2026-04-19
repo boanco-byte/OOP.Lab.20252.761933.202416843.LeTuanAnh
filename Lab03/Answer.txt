@@ -1,0 +1,8 @@
+Q: Java là Pass by Value hay Pass by Reference?
+Trả lời: Java luôn luôn là Pass by Value. Khi truyền một đối tượng, Java sao chép giá trị của địa chỉ (tham chiếu) vào biến tạm của hàm, chứ không truyền chính biến gốc đó.
+
+Q: Tại sao hàm swap không đổi được title của 2 DVD?
+Trả lời: Vì hàm swap chỉ tráo đổi hai biến tạm bên trong hàm (đổi chỗ 2 bản sao địa chỉ). Các biến gốc bên ngoài vẫn trỏ vào đối tượng cũ nên không có gì thay đổi.
+
+Q: Tại sao hàm changeTitle lại đổi được title của jungleDVD?
+Trả lời: Dù là bản sao, nhưng biến tạm vẫn trỏ chung vào cùng một đối tượng trên bộ nhớ với biến gốc. Khi gọi setTitle, hàm tác động trực tiếp lên nội dung của đối tượng đó, nên kết quả được lưu lại.
