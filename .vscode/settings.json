@@ -1,0 +1,13 @@
+{
+  "java.project.sourcePaths": [
+    "GUIProject/src",
+    "Lab04/AimsProject/src",
+    "Lab04/OtherProjects/src"
+  ],
+  "java.project.outputPath": "bin",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "java.checkstyle.enable": false,
+  "java.format.enabled": true
+}
