@@ -1,0 +1,23 @@
+Câu hỏi 1: Lớp nào sẽ phải thực thi (implement) interface Comparable?
+
+Câu trả lời: Lớp Media sẽ là lớp phải thực thi Comparable<Media>.
+
+Giải thích: Vì Media là lớp cha của cả Book, DigitalVideoDisc, và CompactDisc. Khi lớp cha implement Comparable, tất cả các lớp con sẽ tự động thừa hưởng tính chất này, cho phép giỏ hàng (Cart) có thể so sánh và sắp xếp hỗn hợp nhiều loại phương tiện khác nhau cùng một lúc.
+
+Câu hỏi 2: 2. Triển khai phương thức compareTo() như thế nào để phản ánh thứ tự mong muốn?
+
+Trả lời: Quy trình xử lý trong compareTo() sẽ dựa trên một tiêu chí mặc định (ví dụ: ưu tiên theo Title).
+
+Bước 1: So sánh hai tiêu đề bằng hàm compareTo() của chuỗi. Nếu tiêu đề khác nhau, hệ thống sẽ lấy luôn kết quả đó để sắp xếp theo bảng chữ cái.
+
+Bước 2: Nếu tiêu đề trùng nhau, hàm sẽ tiếp tục đối chiếu trường giá tiền bằng Float.compare() để phân định thứ tự dựa trên giá cả sản phẩm.
+
+Câu hỏi 3: Có thể định nghĩa nhiều quy tắc sắp xếp khác nhau bằng Comparable được không?
+
+Câu trả lời: Không thể.
+
+Giải thích: Interface Comparable chỉ bắt bạn ghi đè một phương thức duy nhất là compareTo(Object o). Phương thức này đại diện cho "thứ tự sắp xếp tự nhiên" (natural ordering) và là duy nhất cho mỗi lớp. Để định nghĩa nhiều quy tắc sắp xếp linh hoạt khác nhau (ví dụ: vừa muốn xếp theo Title, vừa muốn xếp theo Cost), bắt buộc phải sử dụng interface Comparator giống như yêu cầu ở Phần 12.
+
+Câu hỏi 4: Nếu muốn đĩa DVD có quy tắc sắp xếp riêng biệt thì xử lý thế nào?
+
+Câu trả lời: Dùng Comparable đặc tả: Để thứ tự mặc định của lớp Media là xếp theo Title/Cost. Nhưng riêng trong lớp DigitalVideoDisc, cần ghi đè (override) lại phương thức compareTo(). Trong hàm này, sẽ kiểm tra tiêu đề trước, nếu tiêu đề trùng nhau thì so sánh thuộc tính riêng length (giảm dần) của DVD, rồi mới xét đến cost.
